@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container justify-content-around">
+    <h2>Applicant dashboard</h2>
+    <a href="{% url 'home' %}">Apply For Listed Jobs</a>
+     {% for application in request.user.applications.all %}
+        <div class="application">
+
+            <a href="{% url 'application' application.id %}">{{ application.job.title }}</a>
+        </div>
+        {% empty %}
+        <p>you haven't applied for any jobs yet...</p>
+        {% endfor %}
+    </div>
+{% endblock %}

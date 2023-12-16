@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Welcome to WorkWeave</h1>
+    <p>Lets patner you with your suitable employer or your perfect candibate....</p>
+
+    <h2>Listed jobs</h2>
+    <div class="row">
+
+    {% for job in jobs %}
+        <div class="col-md-4">
+        <div class="card bg-success">
+            <div class="card-header">
+                        <p class="title-4 text-light">{{ job.title }}</p>
+                        <p class="subtitle-6 text-light">{{ job.created_at }}</p>
+
+                <div class="card-body">
+                    {{ job.description }}
+                    <hr>
+                    <a href="{% url 'jobdetails' job.id %}">View</a>
+                </div>
+            </div>
+
+        </div>
+            <br><br>
+        </div>
+
+    {% endfor %}
+    </div>
+{% endblock %}
+
+

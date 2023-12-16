@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container justify-content-around">
+    <h2 class="text-info">View Application</h2>
+    <h4 class="subhead">{{ application.job.title }}</h4>
+    <small>{{ application.created_at }}</small>
+    <p><strong>Content :</strong><br>{{ application.content }}</p>
+    <p><strong>Experience :</strong><br>{{ application.experience }}</p>
+    </div>
+{% endblock %}

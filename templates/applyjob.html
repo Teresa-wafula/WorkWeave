@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="text-center text-success">Apply for Job - {{ job.title }}</h1>
+<form method="POST" action="" class="container">
+    {% csrf_token %}
+
+
+        <div class="field-name">
+        <div class="col">
+            <label for="content" class="form-label text-success">Content :</label>
+           <textarea name="content" id="content" class="form-control"></textarea>
+        </div>
+
+    </div>
+
+        <div class="field-name">
+        <div class="col">
+            <label for="experience" class="form-label text-success">Experience :</label>
+            <textarea name="experience" id="experience" class="form-control"></textarea>
+        </div>
+
+    </div>
+    <br><br>
+      <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+
+    </div>
+
+
+</form>
+
+
+{% endblock %}

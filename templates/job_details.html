@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container justify-content-around">
+    <h2 class="title">{{ job.title }}</h2>
+    <p> {{ job.description }}</p>
+    <p>{{ job.long_description }}</p>
+    <a href="{% url 'applyjob' job.id %}" class="btn btn-success">Apply</a>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Employer Dashboard</h1>
+
+        <h5 class="card-subtitle">Jobs</h5>
+        {% for job in request.user.jobs.all %}
+        <div class="job">
+            <a href="{% url 'job' job.id %}  ">{{ job.title }}</a>
+        </div>
+        {% empty %}
+        <p>you dont have any jobs yet...</p>
+        {% endfor %}
+
+
+
+{% endblock %}

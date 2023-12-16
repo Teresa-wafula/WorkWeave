@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container justify-content-around">
+    <h4 class="title">Dashboard</h4>
+    {% if userprofile.is_employer %}
+        <h5 class="card-subtitle">Jobs</h5>
+        {% for job in request.user.jobs.all %}
+        <div class="job">
+            <a href="{% url 'job' job.id %}  ">{{ job.title }}</a>
+        </div>
+        {% empty %}
+        <p>you dont have any jobs yet...</p>
+        {% endfor %}
+{% else %}
+
+        <h5 class="card-subtitle">Applications</h5>
+        {% for application in request.user.applications.all %}
+        <div class="application">
+
+            <a href="{% url 'application' application.id %}">{{ application.job.title }}</a>
+        </div>
+        {% empty %}
+        <p>you haven't applied for any jobs yet...</p>
+        {% endfor %}
+    {% endif %}
+    </div>
+
+{% endblock %}
+
+

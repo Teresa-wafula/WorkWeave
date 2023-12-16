@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'static/css/bootstrap.min.css' %}">
+    <script src="{% static 'static/js/bootstrap.min.js' %}"></script>
+    <title> WorkWeave Registration Page</title>
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+<div class="row align-items-center g-lg-5 py-5">
+    <div class="col">
+        <h1 class="text-success">Welcom to WorkWeave</h1> <p>Welcome job seekers and employers!
+        Step into a world of opportunities on WorkWeave. Job seekers, find your perfect match; employers,
+        discover top talent. Navigate seamlessly through our platform for a swift and successful connection.
+        Your next career move or ideal hire is just a click away. Let's build futures together</p>
+
+    </div>
+
+
+
+            <div class="col">
+                <h4 class="title text-success">Login</h4>
+
+                <form method="post" action="">
+                    {% csrf_token %}
+
+
+                    <div class="field-name">
+                        <label for="username" class="">Username/Company</label>
+                        <input type="text" class="input form-control" name="username" id="username" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="input form-control" name="password" id="password" required>
+
+                    </div>
+                    <br>
+
+                    <div class="login__field">
+
+                            <button class="btn btn-success">Login</button>
+
+                    </div>
+                    <br>
+                    <small>Don't have an Account? <a href="{% url 'register' %}"><span class="text-success">Register here</span></a></small>
+                </form>
+
+
+    </div>
+</div>
+</div>
+
+</body>
+</html>
